@@ -6,7 +6,7 @@ import Image from "next/image";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
-    <div className="mb-20">
+    <div className="mb-10">
       <nav className="w-full bg-subtleblue fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
@@ -59,19 +59,17 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="#projects" onClick={() => setNavbar(!navbar)}>
+                  <Link href="/consultancy" onClick={() => setNavbar(!navbar)}>
                     Consultancy
                   </Link>
                 </li>
                 <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="#projects" onClick={() => setNavbar(!navbar)}>
+                  <Link href="/academy" onClick={() => setNavbar(!navbar)}>
                     Academy
                   </Link>
                 </li>
                 <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="#projects" onClick={() => setNavbar(!navbar)}>
-                    +263 77 777 7777
-                  </Link>
+                  +263 77 777 7777
                 </li>
               </ul>
             </div>

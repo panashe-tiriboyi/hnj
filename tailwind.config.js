@@ -19,6 +19,12 @@ module.exports = {
       primaryColor: "#014f7b",
       yw: "#FFB800",
       white: "#fff",
+      white80: "rgba(255,255,255,0.8)",
+    },
+    backgroundImage: {
+      homeBg: "url('/homeBg.png')",
+      consultancyBg: "url('/consultancyBg.png')",
+      team: "url('/team.png')",
     },
   },
   plugins: [],

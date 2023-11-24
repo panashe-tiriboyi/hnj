@@ -21,27 +21,30 @@ export default function Home() {
       <main
         className={`flex min-h-screen flex-col justify-center  items-center  ${inter.className}`}
       >
-        <div>
-          <Image
-            src="/consultancyLogo.jpg"
-            width={200}
-            height={200}
-            alt="logo"
+        <div className="min-w-full py-10  mt-5 flex min-h-screen flex-col justify-center  items-center bg-homeBg">
+          <div>
+            <Image
+              src="/consultancyLogo.jpg"
+              width={200}
+              height={200}
+              alt="logo"
+            />
+          </div>
+          <Card
+            key={1}
+            imageSrc="/consultancy.png"
+            cardName="Consultancy"
+            btnName="Learn More"
+          />
+          <Card
+            key={2}
+            imageSrc="/academy.png"
+            cardName="Academy"
+            btnName="Get Started"
           />
         </div>
-        <Card
-          key={1}
-          imageSrc="/consultancy.png"
-          cardName="Consultancy"
-          btnName="Learn More"
-        />
-        <Card
-          key={2}
-          imageSrc="/academy.png"
-          cardName="Academy"
-          btnName="Get Started"
-        />
-        <div className=" min-w-full bg-primaryColor mt-10 flex min-h-screen flex-col   items-center p-10">
+
+        <div className=" min-w-full bg-primaryColor flex min-h-screen flex-col   items-center p-10">
           <div className="inline-block bg-subtleblue px-10 py-3 mt-10 text-sm font-semibold text-gray-700 mr-2 border-2 border-yw rounded-lg">
             <h2
               className={`${robotoSlab.className} text-primaryColor text-2xl `}
