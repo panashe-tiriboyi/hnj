@@ -13,10 +13,14 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        xsm: "450px",
+      },
     },
     colors: {
       subtleblue: "#d8e3ec",
       primaryColor: "#014f7b",
+      secondaryColor: "#14829F",
       yw: "#FFB800",
       white: "#fff",
       white80: "rgba(255,255,255,0.8)",
@@ -24,6 +28,7 @@ module.exports = {
     backgroundImage: {
       homeBg: "url('/homeBg.png')",
       consultancyBg: "url('/consultancyBg.png')",
+      academyBg: "url('/academyBg.png')",
       team: "url('/team.png')",
     },
   },

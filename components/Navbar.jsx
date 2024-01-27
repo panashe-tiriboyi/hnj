@@ -1,22 +1,24 @@
 import React from "react";
 import Link from "next/link";
+import { NavLink } from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const pathname = usePathname();
   return (
-    <div className="mb-10">
+    <div className="mb-10 ">
       <nav className="w-full bg-subtleblue fixed top-0 left-0 right-0 z-10">
-        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div className="justify-evenly px-4 mx-auto lg:max-w-7xl xl:items-center xl:flex xl:px-8">
           <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
-              {/* LOGO */}
+            <div className="flex items-center justify-between py-3 xl:py-5 xl:block">
               <Link href="/">
-                <h2 className="text-2xl text-cyan-600 font-bold ">LOGO</h2>
+                <Image src="/hnj.svg" width={30} height={30} alt="logo" />
               </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
-              <div className="md:hidden">
+              <div className="xl:hidden">
                 <button
                   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={() => setNavbar(!navbar)}
@@ -38,37 +40,63 @@ const Navbar = () => {
           </div>
           <div>
             <div
-              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? "p-12 md:p-0 block z-20" : "hidden"
+              className={`flex-1 justify-self-center pb-3 mt-8 xl:block xl:pb-0 xl:mt-0 ${
+                navbar ? "p-12 xl:p-0 block z-20" : "hidden"
               }`}
             >
-              <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-purple-900  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="/" onClick={() => setNavbar(!navbar)}>
-                    Home
+              <ul className="h-screen xl:h-auto items-center justify-center xl:flex font-bold text-primaryColor xl:gap-4 ">
+                <li className="pb-6 text-xl xl:text-sm py-2 xl:py-2 px-6   xl:px-2 text-center border-b-2 xl:border-b-0  hover:bg-purple-900  border-purple-900  xl:hover:text-purple-600 xl:hover:bg-transparent">
+                  <Link
+                    className={`link ${
+                      pathname === "/"
+                        ? "bg-primaryColor border-2 rounded-lg px-3 py-2 text-white"
+                        : ""
+                    }`}
+                    href="/"
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    HOME
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="./aboutUs" onClick={() => setNavbar(!navbar)}>
-                    About Us
+                <li className="pb-6 text-xl xl:text-sm py-2 xl:py-2 px-6 xl:px-2  text-center  border-b-2 xl:border-b-0  hover:bg-purple-600  border-purple-900  xl:hover:text-purple-600 xl:hover:bg-transparent">
+                  <Link href="./#aboutUs" onClick={() => setNavbar(!navbar)}>
+                    ABOUT US
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="#projects" onClick={() => setNavbar(!navbar)}>
-                    Contact Us
+                <li className="pb-6 text-xl xl:text-sm py-2 xl:py-2 px-6 xl:px-2  text-center  border-b-2 xl:border-b-0  hover:bg-purple-600  border-purple-900  xl:hover:text-purple-600 xl:hover:bg-transparent">
+                  <Link href="#contactUs" onClick={() => setNavbar(!navbar)}>
+                    CONTACT US
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="/consultancy" onClick={() => setNavbar(!navbar)}>
-                    Consultancy
+
+                <li className="pb-6 text-xl xl:text-sm py-2 xl:py-2 px-6 xl:px-2  text-center  border-b-2 xl:border-b-0  hover:bg-purple-600  border-purple-900  xl:hover:text-purple-600 xl:hover:bg-transparent">
+                  <Link
+                    className={`link ${
+                      pathname === "/consultancy"
+                        ? "bg-primaryColor border-2 rounded-lg px-3 py-2 text-white"
+                        : ""
+                    }`}
+                    href="/consultancy"
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    CONSULTANCY
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="/academy" onClick={() => setNavbar(!navbar)}>
-                    Academy
+                <li className="pb-6 text-xl xl:text-sm py-2 xl:py-2 px-6 xl:px-2 text-center  border-b-2 xl:border-b-0  hover:bg-purple-600  border-purple-900  xl:hover:text-purple-600 xl:hover:bg-transparent">
+                  <Link
+                    className={`link ${
+                      pathname === "/academy"
+                        ? "bg-primaryColor border-2 rounded-lg px-3 py-2 text-white"
+                        : ""
+                    }`}
+                    href="/academy"
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    ACADEMY
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+
+                <li className="pb-6 text-xl xl:text-sm text-primaryColor py-2 xl:py-2 px-6 xl:px-2  text-center  border-b-2 xl:border-b-0  hover:bg-purple-600  border-purple-900  xl:hover:text-purple-600 xl:hover:bg-transparent">
                   +263 77 777 7777
                 </li>
               </ul>
